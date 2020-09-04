@@ -2,49 +2,44 @@ export const theme = {
     appHeader: '48px',
     appFooter: '48px',
     space: 8,
-    colors: {},
-    buttons: {
-        primary: {
-            'background-color': '#2F52E0',
-            color: 'white',
-        },
-        success: {
-            'background-color': '#00B900',
-            color: 'white',
-        },
-        warning: {
-            'background-color': '#F9CB40',
-            color: 'white',
-        },
-        danger: {
-            'background-color': '#E3170A',
-            color: 'white',
-        },
+    colors: {
+        primary: '',
+        secondary: '',
+        tertiary: '',
+        white: '#FFFFF3',
+        black: '#5B5759',
+        gray: '#E0E3DA',
     },
-    fonts: {
-        headerTitle: {
-            'font-size': '2.6rem',
-            'font-weight': '600',
-        },
+    alert: {
+        primary: '#2F52E0',
+        primary2: '#3658e9',
+        success: '#00B900',
+        success2: '#0eb50e',
+        warning: '#ffc41e',
+        warning2: '#fac820',
+        danger: '#E3170A',
+        danger2: '#fc2f22',
+    },
+    typography: {
         title: {
-            'font-size': '2rem',
-            'font-weight': '600',
+            fontSize: '2rem',
+            fontWeight: 600,
         },
-        default: {
-            'font-size': '1.6rem',
-            'font-weight': '400',
+        desc: {
+            fontSize: '1.4rem',
+            fontWeight: 400,
         },
-        small: {
-            'font-size': '1.2rem',
-            'font-weight': '400',
+        mainMenu: {
+            fontSize: '2rem',
+            fontWeight: 500,
         },
-        medium: {
-            'font-size': '1.5rem',
-            'font-weight': '500',
+        subMenu: {
+            fontSize: '1.2rem',
+            fontWeight: 400,
         },
-        large: {
-            'font-size': '1.8rem',
-            'font-weight': '600',
+        common: {
+            fontSize: '1.6rem',
+            fontWeight: 400,
         },
     },
 } as const;

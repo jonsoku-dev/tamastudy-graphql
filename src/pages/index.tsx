@@ -3,7 +3,8 @@ import { GetServerSideProps } from 'next';
 import { initializeApollo } from '../lib/apolloClient';
 import { CurrentUserDocument } from '../generated/apolloComponents';
 import { ApolloClient, NormalizedCacheObject, useQuery } from '@apollo/client';
-import PageLayout from '../components/layouts/AppPageLayout';
+import { Button } from '../components/atoms/Button/Button';
+import { PageLayout } from '../components/layouts/PageLayout/PageLayout';
 
 const IndexPage = () => {
     const { data, loading } = useQuery(CurrentUserDocument);
@@ -16,7 +17,22 @@ const IndexPage = () => {
         return <div>loading ...</div>;
     }
 
-    return <PageLayout title="Home | Next.js + TypeScript Example">Home!</PageLayout>;
+    return (
+        <PageLayout title="Home | Next.js + TypeScript Example">
+            <div>
+                <Button label={'hey'} display={'flex'} />
+            </div>
+
+            <div>
+                <Button label={'hey'} display={'flex'} size={'large'} />
+                <Button label={'hey'} mode={'danger'} display={'flex'} size={'large'} />
+                <Button label={'hey'} mode={'success'} display={'flex'} size={'large'} />
+                <Button label={'hey'} mode={'warning'} display={'flex'} size={'large'} />
+                <Button label={'hey'} loading disabled display={'flex'} size={'large'} />
+                <Button label={'hey'} disabled display={'flex'} size={'large'} />
+            </div>
+        </PageLayout>
+    );
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {

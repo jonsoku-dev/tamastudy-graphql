@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Button, ButtonProps } from './Button';
 
 export default {
-    title: 'Example/Button',
+    title: 'atoms/Button',
     component: Button,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -70,4 +70,11 @@ Disabled.args = {
     size: 'medium',
     label: 'Button',
     disabled: true,
+};
+
+export const Transparent = Template.bind({});
+Transparent.args = {
+    size: 'medium',
+    label: 'Button',
+    mode: 'transparent',
 };

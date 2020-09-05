@@ -63,7 +63,6 @@ const Wrapper = styled.button<ButtonProps>`
         padding: ${props.padding};
         display: ${props.display};
         background-color: ${handlerBackgroundColor(props.theme.alert, props.mode)};
-        color: ${props.fontColor ?? props.theme.colors.white};
         font-size: ${handlerFontSize(props.size)};
         ${props.backgroundColor &&
         css`
@@ -129,6 +128,7 @@ const Wrapper = styled.button<ButtonProps>`
                 transition: 1.2s;
             }
         }
+        color: ${props.fontColor ?? props.theme.colors.white};
     `}
 `;
 
@@ -163,7 +163,7 @@ export const Button: React.FC<ButtonProps> = ({
             {...props}
         >
             {loading && (
-                <Icon>
+                <Icon rotationLeft>
                     <CachedIcon />
                 </Icon>
             )}

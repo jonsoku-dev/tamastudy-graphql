@@ -1,21 +1,21 @@
 import React, { ElementType, ReactNode } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../styles/theme';
+import { Theme } from '../../../../styled-components';
 
-const Container = styled.div<TypographyProps>`
-    ${(p) => p.theme.typography[p.variant ?? 'body2']};
-    color: ${(p) => (p.color ? p.color : 'black')};
+const Container = styled.div<TypographyProps | Theme>`
+    color: ${(p) => p.color ?? p.theme.colors.black};
 `;
 
 export interface TypographyProps {
-    variant?: 'title' | 'desc' | 'mainMenu' | 'subMenu' | 'common';
+    variant?: keyof Theme['typography'];
     color?: string;
     tag?: ElementType;
     display?: 'initial' | 'block' | 'inline';
     children?: ReactNode;
 }
 
-export const Typography: React.FC<TypographyProps> = ({ tag, variant = 'common', children, ...props }) => {
+export const Typography: React.FC<TypographyProps> = ({ tag = 'span', variant = 'common', children, ...props }) => {
     const typoStyles = theme.typography[variant];
     return (
         <Container as={tag} style={typoStyles} {...props}>

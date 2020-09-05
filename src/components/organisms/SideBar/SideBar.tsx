@@ -5,17 +5,13 @@ import styled from 'styled-components';
 
 const Wrapper = styled.aside``;
 
-export interface SideBarProps {
-    showMenu: boolean;
-    setShowMenu: any;
-}
+export interface SideBarProps {}
 
-export const SideBar: React.FC<SideBarProps> = ({ showMenu, setShowMenu }) => {
+export const SideBar: React.FC<SideBarProps> = () => {
     return (
         <Wrapper>
-            <SideMenuList showMenu={showMenu} setShowMenu={setShowMenu} />
-            <Backdrop showMenu={showMenu} setShowMenu={setShowMenu} />
+            <SideMenuList />
+            <Backdrop />
         </Wrapper>
     );
 };
-

@@ -1,7 +1,7 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
+import { LayoutContext } from '../../../utils/Layout';
 
 const Wrapper = styled.div`
     .menu__backdrop-enter {
@@ -30,25 +30,23 @@ const Content = styled.div`
     z-index: 9999;
 `;
 
-export interface BackdropProps {
-    showMenu: boolean;
-    setShowMenu: any;
-}
+export interface BackdropProps {}
 
-export const Backdrop: React.FC<BackdropProps> = ({ showMenu, setShowMenu }) => {
+export const Backdrop: React.FC<BackdropProps> = () => {
+    const { setShowMenu, showMenu } = useContext(LayoutContext);
     return (
-       <Wrapper onClick={() => setShowMenu(false)} >
-           <CSSTransition
-               in={showMenu}
-               timeout={300}
-               classNames="menu__backdrop"
-               unmountOnExit
-               onEnter={() => setShowMenu(true)}
-               onExited={() => setShowMenu(false)}
-           >
-               <Content />
-           </CSSTransition>
-       </Wrapper>
+        <Wrapper onClick={() => setShowMenu(false)}>
+            <CSSTransition
+                in={showMenu}
+                timeout={300}
+                classNames="menu__backdrop"
+                unmountOnExit
+                onEnter={() => setShowMenu(true)}
+                onExited={() => setShowMenu(false)}
+            >
+                <Content />
+            </CSSTransition>
+        </Wrapper>
     );
 };
 

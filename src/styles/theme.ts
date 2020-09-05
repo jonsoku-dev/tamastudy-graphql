@@ -7,7 +7,8 @@ export const theme = {
         secondary: '',
         tertiary: '',
         white: '#FFFFF3',
-        black: '#5B5759',
+        black: '#000000',
+        secondBlack: '#5B5759',
         gray: '#E0E3DA',
     },
     alert: {
@@ -39,6 +40,18 @@ export const theme = {
         },
         common: {
             fontSize: '1.6rem',
+            fontWeight: 400,
+        },
+        small: {
+            fontSize: '1.1rem',
+            fontWeight: 300,
+        },
+        medium: {
+            fontSize: '1.6rem',
+            fontWeight: 400,
+        },
+        large: {
+            fontSize: '2rem',
             fontWeight: 400,
         },
     },

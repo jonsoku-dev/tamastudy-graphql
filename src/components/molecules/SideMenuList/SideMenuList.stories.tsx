@@ -11,8 +11,8 @@ export default {
 
 const Template: Story<SideMenuListProps> = (args) => <SideMenuList {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
     setShowMenu: () => {},
     showMenu: true,
 };

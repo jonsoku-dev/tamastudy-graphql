@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Menu } from '../../atoms/Menu/Menu';
 import { CSSTransition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
@@ -9,6 +9,7 @@ import {
     LogoutDocument,
     LogoutMutation,
 } from '../../../generated/apolloComponents';
+import { LayoutContext } from '../../../utils/Layout';
 
 const Wrapper = styled.div`
     .menu-enter {
@@ -58,12 +59,10 @@ const Auth = styled.div`
     `};
 `;
 
-export interface SideMenuListProps {
-    showMenu: boolean;
-    setShowMenu: any;
-}
+export interface SideMenuListProps {}
 
-export const SideMenuList: React.FC<SideMenuListProps> = ({ showMenu, setShowMenu }) => {
+export const SideMenuList: React.FC<SideMenuListProps> = () => {
+    const { setShowMenu, showMenu } = useContext(LayoutContext);
     const { data, loading } = useQuery<CurrentUserQuery>(CurrentUserDocument);
     const [logoutMutation] = useMutation<LogoutMutation>(LogoutDocument, {
         onError({ message }) {

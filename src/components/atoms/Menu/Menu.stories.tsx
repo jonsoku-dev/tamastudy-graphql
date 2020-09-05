@@ -15,7 +15,7 @@ export default {
 
 const Template: Story<MenuProps> = (args) => <Menu {...args} />;
 
-export const InlineMenu = Template.bind({});
-InlineMenu.args = {
+export const Default = Template.bind({});
+Default.args = {
     text: 'Menu1',
 };
